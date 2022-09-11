@@ -1,9 +1,9 @@
-var k30_3x0040_register = "33040";
+var k30_3x0039_register = "33040";
 
 function zabbixJSFunction(value) {
   value = parseInt(value);
 
-  if (value < 65535) {
+  if (value <= 65535 && value > 0) {
     // converte o valor decimal para binário
     var word = Number(value).toString(2).split("").reverse();
     var activeStatusFunctions = "";
@@ -43,7 +43,7 @@ function zabbixJSFunction(value) {
     }
 
     return (
-      "Erro interno (conversão da entrada)\n" +
+      "Erro: Problema na conversão da entrada\n" +
       "valor de entrada: " +
       value +
       " tipo " +
@@ -53,9 +53,11 @@ function zabbixJSFunction(value) {
       " tipo " +
       typeof decimalCheck
     );
+  } else if (value <= 0) {
+    return "Sem alarmes";
   } else {
-    return "Valor não reconhecido";
+    return "Valor incorreto\nValor Máximo: 65536\nValor recebido: " + value;
   }
 }
 
-console.log(zabbixJSFunction(k30_3x0040_register));
+console.log(zabbixJSFunction(k30_3x0039_register));
