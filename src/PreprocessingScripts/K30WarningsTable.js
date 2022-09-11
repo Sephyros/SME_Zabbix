@@ -1,4 +1,4 @@
-var k30_3x0039_register = "33040";
+var k30_3x0040_register = "33040";
 
 function zabbixJSFunction(value) {
   value = parseInt(value);
@@ -54,10 +54,10 @@ function zabbixJSFunction(value) {
       typeof decimalCheck
     );
   } else if (value <= 0) {
-    return "Sem alarmes";
+    return "Sem avisos";
   } else {
     return "Valor incorreto\nValor Máximo: 65536\nValor recebido: " + value;
   }
 }
 
-console.log(zabbixJSFunction(k30_3x0039_register));
+console.log(zabbixJSFunction(k30_3x0040_register));
