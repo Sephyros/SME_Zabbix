@@ -1,6 +1,8 @@
-var k30_3x0006_register = 33040;
+var k30_3x0006_register = "33040";
 
 function zabbixJSFunction(value) {
+  value = parseInt(value);
+
   if (value < 65535) {
     // converte o valor decimal para binário
     var word = Number(value).toString(2).split("").reverse();
@@ -40,7 +42,17 @@ function zabbixJSFunction(value) {
       return activeStatusFunctions;
     }
 
-    return "Erro interno (conversão da entrada)";
+    return (
+      "Erro interno (conversão da entrada)\n" +
+      "valor de entrada: " +
+      value +
+      " tipo " +
+      typeof value +
+      "\nValor de checagem: " +
+      decimalCheck +
+      " tipo " +
+      typeof decimalCheck
+    );
   } else {
     return "Valor não reconhecido";
   }
