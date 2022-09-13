@@ -1,6 +1,8 @@
 #!/usr/bin/python
 import sys
 
+# install the last available release (stable)
+# sudo pip install pyModbusTCP
 from pyModbusTCP.client import ModbusClient
 
 c = ModbusClient(host="192.168.10.37", auto_open=True, auto_close=True)
