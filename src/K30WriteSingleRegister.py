@@ -10,51 +10,51 @@ def comando(parametro):
         if c.write_single_register(11009, 1):
           return "Executado"
         else:
-          return "Deu ruim"
+          return "Falha no comando."
     elif parametro == "-parar":
         if c.write_single_register(11009, 2):
           return "Executado"
         else:
-          return "Deu ruim"
+          return "Falha no comando."
     elif parametro == "-redeon":
         if c.write_single_register(11009, 3):
           return "Executado"
         else:
-          return "Deu ruim"
+          return "Falha no comando."
     elif parametro == "-cargaoff":
         if c.write_single_register(11009, 4):
           return "Desligada Chave"
         else:
-          return "Deu ruim"
+          return "Falha no comando."
     elif parametro == "-gmgon":
         if c.write_single_register(11009, 5):
           return "Carga GMG ligado"
         else:
-          return "Deu ruim"
+          return "Falha no comando."
     elif parametro == "-rearme":
         if c.write_single_register(11009, 6):
           return "REARME ativado"
         else:
-          return "Deu ruim"
+          return "Falha no comando."
     elif parametro == "-inibido":
         if c.write_single_register(11009, 7):
           return "Gerador em modo INIBIDO"
         else:
-          return "Deu ruim"
+          return "Falha no comando."
     elif parametro == "-manual":
         if c.write_single_register(11009, 8):
           return "Gerador em modo MANUAL"
         else:
-          return "Deu ruim"
+          return "Falha no comando."
     elif parametro == "-auto":
         if c.write_single_register(11009, 9):
           return "Gerador em modo AUTO"
         else:
-          return "Deu ruim"
+          return "Falha no comando."
     elif parametro == "-teste":
         if c.write_single_register(11009, 0):
           return "Gerador em modo TESTE"
         else:
-          return "Deu ruim"
+          return "Falha no comando."
 
 comando(sys.argv[1])
